@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card mx-auto" style="width: 30rem;">
+        <div class="card-body" style="background-color: #E8E8E8;">
+            <h1 class="card-title text-center">Update Task</h1>
+
+            <form action="" method="post" novalidate enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    {% for er in form.non_field_errors %}
+                        <p class="text-danger">{{ er }}</p>
+                    {% endfor %}
+                {% endif %}
+
+                {% for fm in form %}
+                <!--{{form|crispy}}--> 
+                    <div class="mb-3">
+                        {{ fm.label_tag }}
+                        {{ fm }}
+                        <p class="text-danger">{{ fm.errors|striptags }}</p>
+                    </div>
+                {% endfor %}
+                <label for="Images">Images: </label>
+                <input type="file" multiple name="images"><br> <br>  
+                <div class="text-center">
+                    <a href="{% url 'task-details' task.pk %}" class="btn btn-danger btn-sm">Cancel</a>
+                    <button class="btn btn-primary btn-sm" type="update">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div style="margin: 100px">
+</div>
+{% endblock %}
+

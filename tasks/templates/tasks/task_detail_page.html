@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  {% if messages %}
+  {% for m in messages %}
+      <div {% if m.tags %} class="{{m.tags}}" {% endif %}><small >{{m}}</small></div>
+  {% endfor %}
+  {% endif %}
+  
+  <div class="container mt-5">
+    <h1>Title: {{ task.title }}</h1>
+    <p>Description: {{ task.description }}</p>
+    <p>Priority: {{ task.get_priority_display }}</p>
+    <p>Due Date: {{ task.due_date }}</p>
+    {% if task.is_completed %}
+      <p>Status: <span class="badge bg-success text-light">Completed</span></p>
+    {% else %}
+      <p>Status: <span class="badge bg-danger text-dark">Incomplete</span></p>
+    {% endif %}
+    <p>Create Date: {{ task.created_at }}</p>
+
+    
+    <div class="row">
+      {% if task.images.all %}
+      <h1>Images</h1>
+      {% endif %}
+
+      {% for image in task.images.all %}
+      <div class="col-md-4 mb-3">
+          <a href="{{ image.image.url }}" target="_blank">
+          <div class="card">
+            <img src="{{ image.image.url }}" style="height: 200px;" alt="Task Image" class="card-img-top">
+            <div class="card-body">
+              <a href="{% url "delete-image-conf" image.pk %}" class="btn btn-danger btn-sm float-end">
+                <i class="fa fa-trash"></i> Delete
+              </a>
+            </div>
+          </div>
+        </a>
+        </div>
+      {% endfor %}
+    </div>
+    <a href="{% url 'update-task' task.id %}" class="btn btn-warning btn-sm">Update Task</a>
+  </div>
+  <div style="margin: 130px"></div>
+
+{% endblock %}
