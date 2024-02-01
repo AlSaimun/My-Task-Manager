@@ -1,5 +1,5 @@
 # Task-Manager-Project
-`Python 3.12.1` `Django 4.2.6` </br>
+`Python 3.12.1` `Django 4.2.9` </br>
 A Task Manager system User create, update, delete task. Implemented Authentiaction system.
 
 ## Features
@@ -7,9 +7,10 @@ A Task Manager system User create, update, delete task. Implemented Authentiacti
 - **Task Management:** User can Create, Update, delete Task. 
 - **Upload Multiple image:** User can Upload Multiple image when creat or update task.
 - **Search by Title:** User can search task by title.
+- **Real Time Notification:** Get real time notification when a task due date is over.
 
 ## Technologies Used
-`Python 3.12.1` `Django 4.2.6` `Django-Rest-Framework` `HTML` `CSS` ` Bootstrap5` </br>
+`Python 3.12.1` `Django 4.2.9` `Celery` `Django-Channels` `Django-Rest-Framework` `HTML` `CSS` ` Bootstrap5` </br>
 
 ## Installation
 1. **Clone the repository:**
@@ -51,22 +52,25 @@ A Task Manager system User create, update, delete task. Implemented Authentiacti
     DB_PASSWORD= 'password'
     ```
     NB: It's for send email to user.
-6. **Run migrations:**
+6. **Install Redis:**
+    `https://redis.io/download/`
+   NB: Also another option is download **Memurai** `https://www.memurai.com/`.
+8. **Run migrations:**
 
     ```bash
     python manage.py makemigrations
     python manage.py migrate
     ```
 
-7. **Start the development server:**
+9. **Start the development server:**
 
     ```bash
     python manage.py runserver
     ```
     
-8. **Open your web browser and go to <a href="http://localhost:8000/" target="_blank">`http://localhost:8000/`</a> to access the application.**
+10. **Open your web browser and go to <a href="http://localhost:8000/" target="_blank">`http://localhost:8000/`</a> to access the application.**
 
-9. **Create a superuser account to access the admin panel:**
+11. **Create a superuser account to access the admin panel:**
     ```bash
     python manage.py createsuperuser
     ```
