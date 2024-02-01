@@ -1,4 +1,4 @@
-# Task-Manager-Project
+# My-Task-Manager
 `Python 3.12.1` `Django 4.2.9` </br>
 A Task Manager system User create, update, delete task. Implemented Authentiaction system.
 
@@ -92,5 +92,3 @@ NB. For see details of a task click over the task card
 
 If any confusion feel free to ask me, Thanks for your time.
 
-
-# My-Task-Manager
