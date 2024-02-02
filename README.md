@@ -15,7 +15,7 @@ A Task Manager system User create, update, delete task. Implemented Authentiacti
 ## Installation
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/AlSaimun/Task-Manager-Project.git
+    git clone https://github.com/AlSaimun/My-Task-Manager.git
     ```
 2. **Create a virtual environment:**
 
