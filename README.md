@@ -10,7 +10,7 @@ A Task Manager system User create, update, delete task. Implemented Authentiacti
 - **Real Time Notification:** Get real time notification when a task due date is over.
 
 ## Technologies Used
-`Python 3.12.1` `Django 4.2.9` `Celery` `Django-Channels` `Django-Rest-Framework` `HTML` `CSS` ` Bootstrap5` </br>
+`Python 3.12.1` `Django 4.2.9` `Celery` `Django-Channels` `Django-Rest-Framework` `PostgreSQL` `HTML` `CSS` ` Bootstrap5` </br>
 
 ## Installation
 1. **Clone the repository:**
@@ -47,13 +47,14 @@ A Task Manager system User create, update, delete task. Implemented Authentiacti
     EMAIL_HOST_PASSWORD = 'examplepassword'
     
     # Database credentials
+    # Use PostgreSQL 
     DB_NAME = 'database name'
     DB_USER= 'username'
     DB_PASSWORD= 'password'
     ```
     NB: It's for send email to user.
 6. **Install Redis:**
-    `https://redis.io/download/`
+    `https://redis.io/download/` </br>
    NB: Also another option is download **Memurai** `https://www.memurai.com/`.
 8. **Run migrations:**
 
