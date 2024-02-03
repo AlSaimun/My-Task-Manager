@@ -202,6 +202,38 @@
           document.getElementById("notification-badge").innerText = null;
         }
     </script>
-
+    <script> 
+      // SHow password function
+      function showPassword() {
+          var x = document.getElementById("id_password");
+          var y = document.getElementById("id_password1");
+          var z = document.getElementById("id_password2");
+          
+          try {
+            if (x.type === "password") {
+              x.type = "text";
+            } else {
+              x.type = "password";
+            }  
+          }
+          catch (error){}
+          try {
+            if (y.type === "password") {
+              y.type = "text";
+            } else {
+              y.type = "password";
+            }
+          }
+          catch (error){}
+          try{
+            if (z.type === "password") {
+              z.type = "text";
+            } else {
+              z.type = "password";
+            }
+          }
+          catch (error){}          
+      }
+    </script>
   </body>
 </html>
